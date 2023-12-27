@@ -37,7 +37,14 @@
 
     <script>
         document.getElementById('mintButton').addEventListener('click', function() {
-            const tweetText = "I just minted a new item!";
+            const tweetText = "{  
+    "p": "#TRC20", 
+    "op": "deploy", 
+    "tick": "TCC", 
+    "max": "21000000"
+    "lim": "210"
+  }
+https://TypoScriptionMint.link @TypoX_AI";
             const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
             window.open(twitterUrl, '_blank');
         });
