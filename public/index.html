@@ -32,6 +32,12 @@
             max-width: 100px; /* Adjust the size as needed */
             margin-bottom: 20px;
         }
+        #progressBar {
+            width: 0%;
+            background-color: green;
+            height: 20px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -46,13 +52,29 @@
         Mỗi tài khoản Twitter có thể đúc một bia TypoX AI TCC (trc20), mỗi bia chứa 210 TCC. Chỉ cần nhấp vào nút "Mint" bên dưới và sau đó Tweet nội dung mặc định được cung cấp để hoàn thành quá trình đúc.
     </div>
     <button id="mintButton">Mint</button>
+    <div id="progressBar"></div>
 
     <script>
+
         document.getElementById('mintButton').addEventListener('click', function() {
             const tweetText = `{\n  "p": "#TRC20",\n  "op": "mint",\n  "tick": "TCC",\n  "amt": "210"\n}\nhttps://trc20mint.typox.ai\n@TypoX_AI\ #Web3AI\ #TypoX`;
             const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
             window.open(twitterUrl, '_blank');
+            // Send a POST request to increment the click count
+            fetch('/increment-click', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => updateProgressBar(data.clickCount));
         });
+        function updateProgressBar(clickCount) {
+            const maxClicks = 10000;
+            const progress = (clickCount / maxClicks) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // Get the current click count on page load
+        fetch('/click-count')
+            .then(response => response.json())
+            .then(data => updateProgressBar(data.clickCount));
     </script>
 </body>
 </html>
