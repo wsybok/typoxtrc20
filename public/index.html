@@ -7,19 +7,32 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
         }
         #mintButton {
             padding: 15px 30px;
             font-size: 20px;
             cursor: pointer;
+            margin-top: 20px;
+        }
+        .mint-info {
+            max-width: 600px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
+    <div class="mint-info">
+        TypoX AI铭文，每个twitter账号可以mint一个，每个铭文中包含100TCC，mint方式就是点击下面的mint按钮，然后将默认mint内容twitter发送即可完成
+    </div>
     <button id="mintButton">Mint</button>
 
     <script>
