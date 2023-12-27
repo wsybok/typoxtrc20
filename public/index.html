@@ -1,1 +1,21 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mint Page</title>
+</head>
+<body>
+    <button id="mintButton">Mint</button>
+
+    <script>
+        document.getElementById('mintButton').addEventListener('click', function() {
+            const tweetText = "I just minted a new item!";
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+            window.open(twitterUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
 
