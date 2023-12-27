@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mint Page</title>
+    <link rel="icon" type="image/png" href="path/to/favicon.png"> <!-- Favicon -->
     <style>
         body {
             display: flex;
@@ -27,9 +28,14 @@
             margin-bottom: 20px;
             line-height: 1.6;
         }
+        #logo {
+            max-width: 100px; /* Adjust the size as needed */
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
+    <img src="path/to/your/logo.png" alt="Logo" id="logo"> <!-- Logo -->
     <div class="mint-info">
         TypoX AI铭文，每个twitter账号可以mint一个，每个铭文中包含100TCC，mint方式就是点击下面的mint按钮，然后将默认mint内容twitter发送即可完成
     </div>
@@ -37,7 +43,7 @@
 
     <script>
         document.getElementById('mintButton').addEventListener('click', function() {
-            const tweetText = `{\n  "p": "#TRC20",\n  "op": "deploy",\n  "tick": "TCC",\n  "max": "21000000"\n  "lim": "210"\n}\nhttps://TypoScriptionMint.link\n@TypoX_AI`;
+            const tweetText = `{\n  "p": "#TRC20",\n  "op": "mint",\n  "tick": "TCC",\n  "max": "21000000"\n  "lim": "210"\n}\nhttps://TypoScriptionMint.link\n@TypoX_AI`;
             const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
             window.open(twitterUrl, '_blank');
         });
