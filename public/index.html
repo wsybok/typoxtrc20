@@ -46,7 +46,9 @@
         Mỗi tài khoản Twitter có thể đúc một bia TypoX AI TCC (trc20), mỗi bia chứa 210 TCC. Chỉ cần nhấp vào nút "Mint" bên dưới và sau đó Tweet nội dung mặc định được cung cấp để hoàn thành quá trình đúc.
     </div>
     <button id="mintButton">Mint</button>
-
+    <!-- RSS Feed Widget -->
+    <rssapp-wall id="9zorO0WPyMgncYSF"></rssapp-wall>
+    <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
     <script>
         document.getElementById('mintButton').addEventListener('click', function() {
             const tweetText = `{\n  "p": "#TRC20",\n  "op": "mint",\n  "tick": "TCC",\n  "amt": "210"\n}\nhttps://trc20mint.typox.ai\n@TypoX_AI\ #Web3AI\ #TypoX`;
