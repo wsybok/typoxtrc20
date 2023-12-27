@@ -37,15 +37,7 @@
 
     <script>
         document.getElementById('mintButton').addEventListener('click', function() {
-            const tweetText = "{  
-    "p": "#TRC20", 
-    "op": "deploy", 
-    "tick": "TCC", 
-    "max": "21000000"
-    "lim": "210"
-  }
-https://TypoScriptionMint.link 
-@TypoX_AI";
+            const tweetText = `{\n  "p": "#TRC20",\n  "op": "deploy",\n  "tick": "TCC",\n  "max": "21000000"\n  "lim": "210"\n}\nhttps://TypoScriptionMint.link\n@TypoX_AI`;
             const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
             window.open(twitterUrl, '_blank');
         });
