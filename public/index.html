@@ -36,6 +36,7 @@
 </head>
 <body>
     <img src="/logo.png" alt="Logo" id="logo"> <!-- Logo -->
+    <div id="progress-bar-widget"></div>
     <div class="mint-info">
        Each Twitter account can mint one TypoX AI TCC (trc20) inscription, with each inscription containing 210 TCC. To mint, simply click the "Mint" button below and then tweet the default content provided to complete the minting process.
     </div>
@@ -46,7 +47,61 @@
         Mỗi tài khoản Twitter có thể đúc một bia TypoX AI TCC (trc20), mỗi bia chứa 210 TCC. Chỉ cần nhấp vào nút "Mint" bên dưới và sau đó Tweet nội dung mặc định được cung cấp để hoàn thành quá trình đúc.
     </div>
     <button id="mintButton">Mint</button>
-    
+
+    <script>
+  (function() {
+    // Function to create the progress bar widget
+    function createProgressBarWidget(containerId, initialValue) {
+      // Select the container for the widget
+      const container = document.getElementById(containerId);
+
+      // Create the widget HTML
+      const widgetHTML = `
+        <div class="bg-gray-900 rounded-lg p-6 w-full max-w-xs">
+          <div class="flex items-center justify-between pb-4">
+            <div class="flex items-center">
+              <span class="text-blue-400 text-2xl font-bold mr-2">X</span>
+              <img src="https://placehold.co/20x20" alt="Placeholder image for a cloud icon" class="mr-2">
+            </div>
+            <div class="bg-blue-500 text-white px-2 py-1 text-xs rounded">LIVE</div>
+          </div>
+          <div class="bg-gray-700 rounded-full overflow-hidden mb-4">
+            <div id="progressBar" class="progress-bar bg-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full" style="width: ${initialValue}%;">${initialValue}%</div>
+          </div>
+          <div class="flex justify-between items-center text-white text-sm mb-6">
+            <div>
+              <div class="font-medium">Minted</div>
+            </div>
+            <div>
+              <div>Total Supply</div>
+              <div class="font-bold">21,000,000</div>
+            </div>
+            <div>
+              <div>Mint Time</div>
+              <div class="font-bold">Dec.23, 14:00 PM UTC+0</div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Set the inner HTML of the container
+      container.innerHTML = widgetHTML;
+    }
+
+    // Function to update the progress bar dynamically
+    window.updateProgressBar = function(percentage) {
+      const progressBar = document.getElementById('progressBar');
+      progressBar.style.width = percentage + '%';
+      progressBar.textContent = percentage + '%';
+    }
+
+    // Create the widget with the initial value set to 50%
+    createProgressBarWidget('progress-bar-widget', 50);
+
+    // Example usage to update the progress bar after some time
+    // setTimeout(() => updateProgressBar(100), 3000);
+  })();
+</script>
     <script>
         document.getElementById('mintButton').addEventListener('click', function() {
             const tweetText = `{\n  "p": "#TRC20",\n  "op": "mint",\n  "tick": "TCC",\n  "amt": "210"\n}\nhttps://trc20mint.typox.ai\n@TypoX_AI\ #Web3AI\ #TypoX`;
