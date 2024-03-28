@@ -1,58 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mint Page</title>
-    <link rel="icon" type="image/png" href="/favicon.png"> <!-- Favicon -->
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        #mintButton {
-            padding: 15px 30px;
-            font-size: 20px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .mint-info {
-            max-width: 600px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        #logo {
-            max-width: 100px; /* Adjust the size as needed */
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <img src="/logo.png" alt="Logo" id="logo"> <!-- Logo -->
-    <div class="mint-info">
-       Each Twitter account can mint one TypoX AI TCC (trc20) inscription, with each inscription containing 210 TCC. To mint, simply click the "Mint" button below and then tweet the default content provided to complete the minting process.
+<div
+  class="flex gap-4 items-start px-9 py-10 bg-white rounded-2xl shadow-[0px_0px_8px_rgba(0,0,0,0.2)] max-md:flex-wrap max-md:px-5"
+>
+  <img
+    loading="lazy"
+    srcset="..."
+    class="shrink-0 self-stretch aspect-square w-[60px]"
+  />
+  <div class="flex flex-col mt-2.5 text-black">
+    <div class="text-2xl font-semibold">UID:764c40</div>
+    <div class="flex gap-3 px-0.5 mt-3 text-base">
+      <div class="grow my-auto">0x1b...6c75</div>
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/203ca4b5c8dba2785e37b2c537ec0221f64a0a9c818ab4a0e21f5845fc84bf76?"
+        class="shrink-0 w-5 aspect-square"
+      />
     </div>
-    <div class="mint-info">
-        每个Twitter账号可以铸造一个TypoX AI TCC (trc20)铭文，每个铭文包含210 TCC。只需点击下面的“Mint”按钮，然后Tweet提供的默认内容即可完成铸造过程。
+  </div>
+  <div class="flex flex-col mt-2.5 max-md:max-w-full">
+    <div
+      class="flex gap-5 justify-between items-start max-md:flex-wrap max-md:max-w-full"
+    >
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bef04183615883ffbf309c837bcf3d5f1687f69065dce621a9a2134ee425448?"
+        class="shrink-0 w-5 aspect-square"
+      />
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ade33e80378c48544e39431bcfe4f3c1ed283a633a0bde2d02fa3ebd77c9cc0c?"
+        class="shrink-0 mt-2 w-6 aspect-square"
+      />
     </div>
-    <div class="mint-info">
-        Mỗi tài khoản Twitter có thể đúc một bia TypoX AI TCC (trc20), mỗi bia chứa 210 TCC. Chỉ cần nhấp vào nút "Mint" bên dưới và sau đó Tweet nội dung mặc định được cung cấp để hoàn thành quá trình đúc.
+    <div class="text-base font-semibold text-slate-500 max-md:max-w-full">
+      Verify Email &gt;
     </div>
-    <button id="mintButton">Mint</button>
-
-    <script>
-        document.getElementById('mintButton').addEventListener('click', function() {
-            const tweetText = `{\n  "p": "#TRC20",\n  "op": "mint",\n  "tick": "TCC",\n  "amt": "210"\n}\nhttps://trc20mint.typox.ai\n@TypoX_AI\ #Web3AI\ #TypoX`;
-            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
-            window.open(twitterUrl, '_blank');
-        });
-    </script>
-</body>
-</html>
+  </div>
+</div>
