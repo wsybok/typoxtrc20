@@ -1,23 +1,26 @@
-<section class=“flex gap-5 justify-between”>
-  <div class=“flex flex-col text-2xl font-semibold tracking-tight leading-5 text-black”>
-    <img src=“https://cdn.builder.io/api/v1/image/assets/TEMP/a3c357f820343b99310b4fd21d5b64307d396823c5f865d7a6950bc32fe1fbfd?apiKey=7e6589af14724caf839f5a6c987a9544&” alt=“Company logo” class=“self-center aspect-[3.57] w-[228px]” />
-    <nav class=“flex flex-col items-start pr-9 pl-2.5 mt-12 max-md:pr-5 max-md:mt-10">
-      <a href=“#” class=“flex gap-3 whitespace-nowrap”>
-        <img src=“https://cdn.builder.io/api/v1/image/assets/TEMP/b4cbc61148dac884c851ad96f58e80f537a10e8909f66f2889f28aba3846d6d2?apiKey=7e6589af14724caf839f5a6c987a9544&” alt=“Explorer icon” class=“shrink-0 w-10 aspect-square” />
-        <span class=“flex-auto my-auto”>Explorer</span>
-      </a>
-      <a href=“#” class=“flex gap-3 mt-10 whitespace-nowrap”>
-        <img src=“https://cdn.builder.io/api/v1/image/assets/TEMP/c5cf6aec6e202d71ebb5fe2da811dd48141a8938bec206bb9eba7d14331cdb26?apiKey=7e6589af14724caf839f5a6c987a9544&” alt=“Voyager icon” class=“shrink-0 w-10 aspect-square” />
-        <span class=“flex-auto my-auto”>Voyager</span>
-      </a>
-      <a href=“#” class=“flex gap-3 mt-10">
-        <img src=“https://cdn.builder.io/api/v1/image/assets/TEMP/c522ba29f804d3a0e369a05332352557eccdaaea8cd3e0e8aa7aa613ca079472?apiKey=7e6589af14724caf839f5a6c987a9544&” alt=“Log Station icon” class=“shrink-0 w-10 aspect-square” />
-        <span class=“flex-auto my-auto”>Log Station</span>
-      </a>
-    </nav>
-  </div>
-  <div class=“flex flex-col items-center self-end mt-48 max-md:mt-10”>
-    <img src=“https://cdn.builder.io/api/v1/image/assets/TEMP/821385944b1c9a0524a238c4538593baf09bcdd057ba136f908f78439501189d?apiKey=7e6589af14724caf839f5a6c987a9544&” alt=“Decorative image” class=“aspect-[1.05] w-[42px]” />
-    <img src=“https://cdn.builder.io/api/v1/image/assets/TEMP/821385944b1c9a0524a238c4538593baf09bcdd057ba136f908f78439501189d?apiKey=7e6589af14724caf839f5a6c987a9544&” alt=“Decorative image” class=“mt-10 aspect-[1.05] w-[42px]” />
-  </div>
-</section>
+<html>
+<head>
+    <title>Announcement</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-white">
+    <div id="root" class="text-center"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <div className="flex flex-col items-center justify-center space-y-8">
+                    <h1 className="text-xl font-semibold">Announcement</h1>
+                    <img src="https://placehold.co/200x200" alt="Illustration of a person waving with a green background" className="w-48 h-48"/>
+                    <h2 className="text-2xl font-bold">Greetings!</h2>
+                    <p className="text-lg">Hi dear users! Our AI brain is currently being upgraded. See you later!</p>
+                    <p className="text-lg">Too tired? Take a break and stay turned!</p>
+                </div>
+            );
+        }
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
